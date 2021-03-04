@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "cdb35414-24ba-44db-86e5-3e26cab8785b",
+		"name": "qc_qubosolv",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/heartbeat",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{base_url}}/heartbeat",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"heartbeat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{scheme}}://{{base_url}}/task",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.access_token);",
+							"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "{{grant_type}}",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{scheme}}://{{token_url}}",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{token_url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token_url",
+			"value": "\nkeycloak.quantum-circle.com/auth/realms/quantum/protocol/openid-connect/token"
+		},
+		{
+			"key": "base_url",
+			"value": "annealer.quantum-circle.com"
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "client_id",
+			"value": "quantum-cloud-swagger"
+		},
+		{
+			"key": "grant_type",
+			"value": "password"
+		},
+		{
+			"key": "client_secret",
+			"value": "99f1092a-6b93-4260-bc31-73f33fef9c2b"
+		},
+		{
+			"key": "scheme",
+			"value": "https"
+		}
+	]
+}
