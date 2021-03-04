@@ -1,3 +1,10 @@
+## Full contents
+
+- [Installation Notes](#quick-summary)
+- [A Minimal Example](#learn-how-ipfs-works)
+- [Help and documentation](#help-and-documentation)
+- [License](#license)
+
 ## Installation Notes
 
 After downloading and unzipping the repository, you will be able to install the library using either native python setuptools: 
@@ -42,3 +49,17 @@ Optimal bitstring: x = [0 1]
 >>> print(f"Optimal energy: f(x) = {result.optimal_energy}")
 Optimal energy: f(x) = -4.0
 ```
+
+
+
+## Help and documentation
+
+If you're looking for help learning about the API, start with these resources:
+
+- [API Documentation](https://docs.quantum-circle.com)
+
+
+
+## License
+
+[Apache](LICENSE).
