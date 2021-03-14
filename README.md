@@ -1,7 +1,7 @@
 ## Full contents
 
 - [Installation Notes](#quick-summary)
-- [A Minimal Example](#learn-how-ipfs-works)
+- [A Minimal Example](#learn-how-qc_qubosolv-works)
 - [Help and documentation](#help-and-documentation)
 - [License](#license)
 
