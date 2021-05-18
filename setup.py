@@ -35,6 +35,7 @@ setup(
     keywords=["qc_qubosolv"],
     install_requires=requirements,
     packages=find_packages(),
+    package_data={'':['client_secrets.json']},
     include_package_data=True,
     long_description="""\
     Client SDK for main incubator Quantum Annealer.  # noqa: E501

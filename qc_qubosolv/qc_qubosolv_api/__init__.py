@@ -16,12 +16,12 @@
 from __future__ import absolute_import
 
 # import apis into sdk package
-from qc_qubosolv_api.api.problem_api import ProblemApi
-from qc_qubosolv_api.api.default_api import DefaultApi
+from .api.problem_api import ProblemApi
+from .api.default_api import DefaultApi
 
 # import ApiClient
-from qc_qubosolv_api.api_client import ApiClient
-from qc_qubosolv_api.configuration import Configuration
+from .api_client import ApiClient
+from .configuration import Configuration
 # import models into sdk package
-from qc_qubosolv_api.models.parameter import Parameter
-from qc_qubosolv_api.models.task import Task
+from .models.parameter import Parameter
+from .models.task import Task

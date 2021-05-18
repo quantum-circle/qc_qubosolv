@@ -23,9 +23,9 @@ import tempfile
 import six
 from six.moves.urllib.parse import quote
 
-from qc_qubosolv_api.configuration import Configuration
-import qc_qubosolv_api.models
-from qc_qubosolv_api import rest
+from qc_qubosolv.qc_qubosolv_api.configuration import Configuration
+import qc_qubosolv.qc_qubosolv_api.models
+from qc_qubosolv.qc_qubosolv_api import rest
 
 
 class ApiClient(object):

@@ -15,5 +15,5 @@
 from __future__ import absolute_import
 
 # import models into model package
-from qc_qubosolv_api.models.parameter import Parameter
-from qc_qubosolv_api.models.task import Task
+from .parameter import Parameter
+from .task import Task

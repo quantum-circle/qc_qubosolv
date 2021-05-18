@@ -3,3 +3,4 @@ import warnings
 warnings.filterwarnings("ignore", category=CryptographyDeprecationWarning)
 
 from qc_qubosolv.solver import Solver
+
