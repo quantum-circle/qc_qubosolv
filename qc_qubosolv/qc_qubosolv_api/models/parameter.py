@@ -35,7 +35,8 @@ class Parameter(object):
         'beta': 'float',
         'maximize': 'bool',
         'temp_start': 'float',
-        'temp_end': 'float'
+        'temp_end': 'float',
+        'algorithm': 'str'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class Parameter(object):
         'beta': 'beta',
         'maximize': 'maximize',
         'temp_start': 'temp_start',
-        'temp_end': 'temp_end'
+        'temp_end': 'temp_end',
+        'algorithm': 'algorithm'
     }
 
-    def __init__(self, tau=0.099, beta=0.2, maximize=True, temp_start=None, temp_end=0.001):  # noqa: E501
+    def __init__(self, tau=0.099, beta=0.2, maximize=True, temp_start=None, temp_end=0.001, algorithm='sqa'):  # noqa: E501
         """Parameter - a model defined in Swagger"""  # noqa: E501
 
         self._tau = None
@@ -54,6 +56,7 @@ class Parameter(object):
         self._maximize = None
         self._temp_start = None
         self._temp_end = None
+        self._algorithm = None
         self.discriminator = None
 
         if tau is not None:
@@ -66,6 +69,8 @@ class Parameter(object):
             self.temp_start = temp_start
         if temp_end is not None:
             self.temp_end = temp_end
+        if algorithm is not None:
+            self.algorithm = algorithm
 
     @property
     def tau(self):
@@ -171,6 +176,27 @@ class Parameter(object):
         """
 
         self._temp_end = temp_end
+
+    @property
+    def algorithm(self):
+        """Gets the algorithm of this Parameter.  # noqa: E501
+
+
+        :return: The algorithm of this Parameter.  # noqa: E501
+        :rtype: str
+        """
+        return self._algorithm
+
+    @algorithm.setter
+    def algorithm(self, algorithm):
+        """Sets the algorithm of this Parameter.
+
+
+        :param algorithm: The algorithm of this Parameter.  # noqa: E501
+        :type: str
+        """
+
+        self._algorithm = algorithm
 
     def to_dict(self):
         """Returns the model properties as a dict"""
